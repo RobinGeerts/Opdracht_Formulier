@@ -1,15 +1,3 @@
-//ophalen informatie
-let voornaam =      document.getElementById('voornaam');
-let naam =          document.getElementById('naam');
-let gebruikernaam = document.getElementById('gebruiker');
-let email =         document.getElementById('e-mail')
-let pasword =       document.getElementById('wachtwoord');
-let paswordRepeat = document.getElementById('herhaalWachtwoord');
-let adres =         document.getElementById('adres');
-let land =          document.getElementById('land');
-let provincie =     document.getElementById('provincie');
-let zipp =          document.getElementById('select');
-
 //Bij het klikken op de knop trigger je de functie validateForm. 
 //In deze functie controleer je alle velden of spreek je eventueel andere functies aan.
 //Maak gebruik van een array errors waarin je iedere melding gaat bewaren.
@@ -21,8 +9,11 @@ let zipp =          document.getElementById('select');
 // LAND
 // PROVINCIE
 //Indien het veld leeg is geef je bijvoorbeeld volgende melding “Het veld voornaam is vereist.”.
+
+
+
 function validateForm(){
-    
+document.getElementById('controle').innerHTML = "test";
 }
 
 //Voor de controle van een leeg veld gebruik je een functie checkEmptyField waar je steeds 2 parameters 
@@ -80,6 +71,6 @@ function checkPC(){
 
 //Controleer ook of de algemene voorwaarden zijn aangeduid. Dit is verplicht. 
 //Voeg een melding toe aan de array errors.
-function checkUseAgreement(){
+function checkUseAgreement(id){
 
 }
