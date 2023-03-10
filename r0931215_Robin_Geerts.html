@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Opdracht Formulier Interactieve Websites</title>
     <link rel="stylesheet" href="Formulier.css" />
-    <link rel="text/javascript" href="Formulier.js"/>
+    <script src="Formulier.js"></script>
 
     <!--Link Bootstrap Formulier opbouwen-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
@@ -14,721 +14,233 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
 </head>
 <body>
+    <!--Start van de container-->
+        <div class="row">
+            <div class="column left">
+        <!--Start van het formulier in de container-->
+        <form>
+            <div class="row">
+            <div class="col-12">          
+            <h1>Registreer</h1>
+            <p>Meld je aan bij Anoroc Services, wij beschermen jou software tegen maleware!</p>
+            </div>
+            </div>
+            <div class="row">
 
-    
-    <form>
-        <div class="row">
-        <div class="col-12">          
-        <h1>Registreer</h1>
-        <p>Meld je aan bij Anoroc Services, wij beschermen jou software tegen maleware!</p>
-        </div>
-        </div>
-        <div class="row">
         <!--Voornaam onderdeel Verplicht-->
-        <div class="form-group col-6">
-            <label for="voornaam">Voornaam</label>
-            <input id="voornaam" name="voornaam" placeholder="Uw voornaam" type="text" class="form-control"
-                required="required">
-        </div>
-
-        <!--Naam onderdeel Verplicht-->
-        <div class="form-group col-6">
-            <label for="Uw naam">Naam</label>
-            <input id="Uw naam" name="Uw naam" placeholder="naam" type="text" required="required" class="form-control">
-        </div>
-        </div>
-        </div>
-
-        <!--Gebruikersnaam Verplicht-->
-        <div class="row">
-        <div class="form-group col-6">
-            <label for="gebruiker">Gebruikersnaam</label>
-            <div class="input-group">
-                <div class="input-group-prepend">
-                    <div class="input-group-text">
-                        <i class="fa fa-at"></i>
-                    </div>
-                </div>
-                <input id="gebruiker" name="gebruiker" placeholder="r09student" type="text" class="form-control"
+            <div class="form-group col-6">
+                <label for="voornaam">Voornaam</label>
+                <input id="voornaam" name="voornaam" placeholder="Uw voornaam" type="text" class="form-control"
                     required="required">
             </div>
-        </div>
 
-        <!--Email adres-->
-        <div class="form-group col-6">
-            <label for="e-mail">E-mailadres</label>
-            <input id="e-mail" name="e-mail" placeholder="mail@example.be" type="text" class="form-control">
-        </div>
-        </div>
-
-        <!--Wachtwoord en wachtwoord herhaling-->
-        <div class="row">
-        <div class="form-group col-6">
-            <label for="wachtwoord">Wachtwoord</label>
-            <input id="wachtwoord" name="wachtwoord" type="text" class="form-control" 
-                aria-describedby="wachtwoordHelpBlock">
-            <span id="wachtwoordHelpBlock" class="form-text text-muted">Je wachtwoord moet minstens 8 tekens lang
-                zijn</span>
-        </div>
-
-        <div class="form-group col-6">
-            <label for="herhaalWachtwoord">herhaal wachtwoord</label>
-            <input id="herhaalWachtwoord" name="herhaalWachtwoord" type="text" class="form-control">
-        </div>
-        </div>
-
-        <!--Adres gegevens Verplicht-->
-        <div class="form-group">
-            <label for="adres">Adres</label>
-            <input id="adres" name="adres" placeholder="Uw adres en huisnummer" type="text" class="form-control"
-                required="required">
-        </div>
-
-        <!--Land Verplicht-->
-        <div class = "row">
-        <div class="form-group col-5">
-            <label for="land">Land</label>
-            <div>
-                <select id="land" name="land" class="custom-select" required="required">
-                    <option value="">kies een land</option>
-                    <option value="">Albanië</option>
-                    <option value="">Andorra</option>
-                    <option value="">Armenië</option>
-                    <option value="">Azerbeidzjan</option>
-                    <option value="">Belgie</option>
-                    <option value="">Bosnië</option>
-                    <option value="">Bulgarije</option>
-                    <option value="">Cyprus</option>
-                    <option value="">Denemarken</option>
-                    <option value="">Duitsland</option>
-                    <option value="">Estland</option>
-                    <option value="">Finland</option>                  
-                    <option value="">Frankrijk</option>
-                    <option value="">Georgië</option>
-                    <option value="">Griekenland</option>
-                    <option value="">Hongarije</option>
-                    <option value="">Ierland</option>
-                    <option value="">Ijsland</option>
-                    <option value="">Italië</option>
-                    <option value="">Kazachstan</option>
-                    <option value="">Kosovo</option>
-                    <option value="">Kroatië</option>
-                    <option value="">Letland</option>
-                    <option value="">Liechtenstein</option>
-                    <option value="">Litouwen</option>
-                    <option value="">Luxemburg</option>
-                    <option value="">Malta</option>
-                    <option value="">Moldavië</option>
-                    <option value="">Monaco</option>
-                    <option value="">Montenegro</option>
-                    <option value="">Nederland</option>
-                    <option value="">Noord-Macedonië</option>
-                    <option value="">Noorwegen</option>
-                    <option value="">Oekraïne</option>
-                    <option value="">Oostenrijk</option>
-                    <option value="">Polen</option>
-                    <option value="">Portugal</option>
-                    <option value="">Roemenië</option>
-                    <option value="">Rusland</option>
-                    <option value="">San Marino</option>
-                    <option value="">Servië</option>
-                    <option value="">Slovenië</option>
-                    <option value="">Slowakije</option>
-                    <option value="">Spanje</option>
-                    <option value="">Tsjechië</option>
-                    <option value="">Turkije</option>
-                    <option value="">Vaticaanstad</option>
-                    <option value="">Verenigd Koninkrijk</option>
-                    <option value="">Wit-Rusland</option>
-                    <option value="">Zweden</option>
-                    <option value="">Zwitserland</option>
-                </select>
+        <!--Naam onderdeel Verplicht-->
+            <div class="form-group col-6">
+                <label for="naam">Naam</label>
+                <input id="naam" name="Uw naam" placeholder="naam" type="text" required="required" class="form-control">
             </div>
-        </div>
-
-        <!--Provincie Verplicht-->
-        <div class="form-group col-5">
-            <label for="provincie">Provincie</label>
-            <div>
-                <select id="provincie" name="provincie" class="custom-select" required="required">
-                    <option value="">Kies een provincie</option>
-                    <option value="">Antwerpen</option>
-                    <option value="">Brussel</option>
-                    <option value="">Henegouwen</option>
-                    <option value="">Limburg</option>
-                    <option value="">Luik</option>
-                    <option value="">Luxemburg</option>
-                    <option value="">Namen</option>
-                    <option value="">Oost-Vlaanderen</option>
-                    <option value="">Vlaams-Brabant</option>
-                    <option value="">Waals-Brabant</option>
-                    <option value="">West-Vlaanderen</option>
-                </select>
-            </div>
-        </div>
-
-        <!--Postcode-->
-        <div class="form-group col-2">
-            <label for="select">Postcode</label>
-            <div>
-                <select id="select" name="select" class="custom-select">
-                    <option value=""></option>
-                    <option value=""> 2001 </option>
-                    <option value=""> 2002 </option>
-                    <option value=""> 2003 </option>
-                    <option value=""> 2004 </option>
-                    <option value=""> 2005 </option>
-                    <option value=""> 2006 </option>
-                    <option value=""> 2007 </option>
-                    <option value=""> 2008 </option>
-                    <option value=""> 2009 </option>
-                    <option value=""> 2010 </option>
-                    <option value=""> 2011 </option>
-                    <option value=""> 2012 </option>
-                    <option value=""> 2013 </option>
-                    <option value=""> 2014 </option>
-                    <option value=""> 2015 </option>
-                    <option value=""> 2016 </option>
-                    <option value=""> 2017 </option>
-                    <option value=""> 2018 </option>
-                    <option value=""> 2019 </option>
-                    <option value=""> 2020 </option>
-                    <option value=""> 2021 </option>
-                    <option value=""> 2022 </option>
-                    <option value=""> 2023 </option>
-                    <option value=""> 2024 </option>
-                    <option value=""> 2025 </option>
-                    <option value=""> 2026 </option>
-                    <option value=""> 2027 </option>
-                    <option value=""> 2028 </option>
-                    <option value=""> 2029 </option>
-                    <option value=""> 2030 </option>
-                    <option value=""> 2031 </option>
-                    <option value=""> 2032 </option>
-                    <option value=""> 2033 </option>
-                    <option value=""> 2034 </option>
-                    <option value=""> 2035 </option>
-                    <option value=""> 2036 </option>
-                    <option value=""> 2037 </option>
-                    <option value=""> 2038 </option>
-                    <option value=""> 2039 </option>
-                    <option value=""> 2040 </option>
-                    <option value=""> 2041 </option>
-                    <option value=""> 2042 </option>
-                    <option value=""> 2043 </option>
-                    <option value=""> 2044 </option>
-                    <option value=""> 2045 </option>
-                    <option value=""> 2046 </option>
-                    <option value=""> 2047 </option>
-                    <option value=""> 2048 </option>
-                    <option value=""> 2049 </option>
-                    <option value=""> 2050 </option>
-                    <option value=""> 2051 </option>
-                    <option value=""> 2052 </option>
-                    <option value=""> 2053 </option>
-                    <option value=""> 2054 </option>
-                    <option value=""> 2055 </option>
-                    <option value=""> 2056 </option>
-                    <option value=""> 2057 </option>
-                    <option value=""> 2058 </option>
-                    <option value=""> 2059 </option>
-                    <option value=""> 2060 </option>
-                    <option value=""> 2061 </option>
-                    <option value=""> 2062 </option>
-                    <option value=""> 2063 </option>
-                    <option value=""> 2064 </option>
-                    <option value=""> 2065 </option>
-                    <option value=""> 2066 </option>
-                    <option value=""> 2067 </option>
-                    <option value=""> 2068 </option>
-                    <option value=""> 2069 </option>
-                    <option value=""> 2070 </option>
-                    <option value=""> 2071 </option>
-                    <option value=""> 2072 </option>
-                    <option value=""> 2073 </option>
-                    <option value=""> 2074 </option>
-                    <option value=""> 2075 </option>
-                    <option value=""> 2076 </option>
-                    <option value=""> 2077 </option>
-                    <option value=""> 2078 </option>
-                    <option value=""> 2079 </option>
-                    <option value=""> 2080 </option>
-                    <option value=""> 2081 </option>
-                    <option value=""> 2082 </option>
-                    <option value=""> 2083 </option>
-                    <option value=""> 2084 </option>
-                    <option value=""> 2085 </option>
-                    <option value=""> 2086 </option>
-                    <option value=""> 2087 </option>
-                    <option value=""> 2088 </option>
-                    <option value=""> 2089 </option>
-                    <option value=""> 2090 </option>
-                    <option value=""> 2091 </option>
-                    <option value=""> 2092 </option>
-                    <option value=""> 2093 </option>
-                    <option value=""> 2094 </option>
-                    <option value=""> 2095 </option>
-                    <option value=""> 2096 </option>
-                    <option value=""> 2097 </option>
-                    <option value=""> 2098 </option>
-                    <option value=""> 2099 </option>
-                    <option value=""> 2100 </option>
-                    <option value=""> 2101 </option>
-                    <option value=""> 2102 </option>
-                    <option value=""> 2103 </option>
-                    <option value=""> 2104 </option>
-                    <option value=""> 2105 </option>
-                    <option value=""> 2106 </option>
-                    <option value=""> 2107 </option>
-                    <option value=""> 2108 </option>
-                    <option value=""> 2109 </option>
-                    <option value=""> 2110 </option>
-                    <option value=""> 2111 </option>
-                    <option value=""> 2112 </option>
-                    <option value=""> 2113 </option>
-                    <option value=""> 2114 </option>
-                    <option value=""> 2115 </option>
-                    <option value=""> 2116 </option>
-                    <option value=""> 2117 </option>
-                    <option value=""> 2118 </option>
-                    <option value=""> 2119 </option>
-                    <option value=""> 2120 </option>
-                    <option value=""> 2121 </option>
-                    <option value=""> 2122 </option>
-                    <option value=""> 2123 </option>
-                    <option value=""> 2124 </option>
-                    <option value=""> 2125 </option>
-                    <option value=""> 2126 </option>
-                    <option value=""> 2127 </option>
-                    <option value=""> 2128 </option>
-                    <option value=""> 2129 </option>
-                    <option value=""> 2130 </option>
-                    <option value=""> 2131 </option>
-                    <option value=""> 2132 </option>
-                    <option value=""> 2133 </option>
-                    <option value=""> 2134 </option>
-                    <option value=""> 2135 </option>
-                    <option value=""> 2136 </option>
-                    <option value=""> 2137 </option>
-                    <option value=""> 2138 </option>
-                    <option value=""> 2139 </option>
-                    <option value=""> 2140 </option>
-                    <option value=""> 2141 </option>
-                    <option value=""> 2142 </option>
-                    <option value=""> 2143 </option>
-                    <option value=""> 2144 </option>
-                    <option value=""> 2145 </option>
-                    <option value=""> 2146 </option>
-                    <option value=""> 2147 </option>
-                    <option value=""> 2148 </option>
-                    <option value=""> 2149 </option>
-                    <option value=""> 2150 </option>
-                    <option value=""> 2151 </option>
-                    <option value=""> 2152 </option>
-                    <option value=""> 2153 </option>
-                    <option value=""> 2154 </option>
-                    <option value=""> 2155 </option>
-                    <option value=""> 2156 </option>
-                    <option value=""> 2157 </option>
-                    <option value=""> 2158 </option>
-                    <option value=""> 2159 </option>
-                    <option value=""> 2160 </option>
-                    <option value=""> 2161 </option>
-                    <option value=""> 2162 </option>
-                    <option value=""> 2163 </option>
-                    <option value=""> 2164 </option>
-                    <option value=""> 2165 </option>
-                    <option value=""> 2166 </option>
-                    <option value=""> 2167 </option>
-                    <option value=""> 2168 </option>
-                    <option value=""> 2169 </option>
-                    <option value=""> 2170 </option>
-                    <option value=""> 2171 </option>
-                    <option value=""> 2172 </option>
-                    <option value=""> 2173 </option>
-                    <option value=""> 2174 </option>
-                    <option value=""> 2175 </option>
-                    <option value=""> 2176 </option>
-                    <option value=""> 2177 </option>
-                    <option value=""> 2178 </option>
-                    <option value=""> 2179 </option>
-                    <option value=""> 2180 </option>
-                    <option value=""> 2181 </option>
-                    <option value=""> 2182 </option>
-                    <option value=""> 2183 </option>
-                    <option value=""> 2184 </option>
-                    <option value=""> 2185 </option>
-                    <option value=""> 2186 </option>
-                    <option value=""> 2187 </option>
-                    <option value=""> 2188 </option>
-                    <option value=""> 2189 </option>
-                    <option value=""> 2190 </option>
-                    <option value=""> 2191 </option>
-                    <option value=""> 2192 </option>
-                    <option value=""> 2193 </option>
-                    <option value=""> 2194 </option>
-                    <option value=""> 2195 </option>
-                    <option value=""> 2196 </option>
-                    <option value=""> 2197 </option>
-                    <option value=""> 2198 </option>
-                    <option value=""> 2199 </option>
-                    <option value=""> 2200 </option>
-                    <option value=""> 2201 </option>
-                    <option value=""> 2202 </option>
-                    <option value=""> 2203 </option>
-                    <option value=""> 2204 </option>
-                    <option value=""> 2205 </option>
-                    <option value=""> 2206 </option>
-                    <option value=""> 2207 </option>
-                    <option value=""> 2208 </option>
-                    <option value=""> 2209 </option>
-                    <option value=""> 2210 </option>
-                    <option value=""> 2211 </option>
-                    <option value=""> 2212 </option>
-                    <option value=""> 2213 </option>
-                    <option value=""> 2214 </option>
-                    <option value=""> 2215 </option>
-                    <option value=""> 2216 </option>
-                    <option value=""> 2217 </option>
-                    <option value=""> 2218 </option>
-                    <option value=""> 2219 </option>
-                    <option value=""> 2220 </option>
-                    <option value=""> 2221 </option>
-                    <option value=""> 2222 </option>
-                    <option value=""> 2223 </option>
-                    <option value=""> 2224 </option>
-                    <option value=""> 2225 </option>
-                    <option value=""> 2226 </option>
-                    <option value=""> 2227 </option>
-                    <option value=""> 2228 </option>
-                    <option value=""> 2229 </option>
-                    <option value=""> 2230 </option>
-                    <option value=""> 2231 </option>
-                    <option value=""> 2232 </option>
-                    <option value=""> 2233 </option>
-                    <option value=""> 2234 </option>
-                    <option value=""> 2235 </option>
-                    <option value=""> 2236 </option>
-                    <option value=""> 2237 </option>
-                    <option value=""> 2238 </option>
-                    <option value=""> 2239 </option>
-                    <option value=""> 2240 </option>
-                    <option value=""> 2241 </option>
-                    <option value=""> 2242 </option>
-                    <option value=""> 2243 </option>
-                    <option value=""> 2244 </option>
-                    <option value=""> 2245 </option>
-                    <option value=""> 2246 </option>
-                    <option value=""> 2247 </option>
-                    <option value=""> 2248 </option>
-                    <option value=""> 2249 </option>
-                    <option value=""> 2250 </option>
-                    <option value=""> 2251 </option>
-                    <option value=""> 2252 </option>
-                    <option value=""> 2253 </option>
-                    <option value=""> 2254 </option>
-                    <option value=""> 2255 </option>
-                    <option value=""> 2256 </option>
-                    <option value=""> 2257 </option>
-                    <option value=""> 2258 </option>
-                    <option value=""> 2259 </option>
-                    <option value=""> 2260 </option>
-                    <option value=""> 2261 </option>
-                    <option value=""> 2262 </option>
-                    <option value=""> 2263 </option>
-                    <option value=""> 2264 </option>
-                    <option value=""> 2265 </option>
-                    <option value=""> 2266 </option>
-                    <option value=""> 2267 </option>
-                    <option value=""> 2268 </option>
-                    <option value=""> 2269 </option>
-                    <option value=""> 2270 </option>
-                    <option value=""> 2271 </option>
-                    <option value=""> 2272 </option>
-                    <option value=""> 2273 </option>
-                    <option value=""> 2274 </option>
-                    <option value=""> 2275 </option>
-                    <option value=""> 2276 </option>
-                    <option value=""> 2277 </option>
-                    <option value=""> 2278 </option>
-                    <option value=""> 2279 </option>
-                    <option value=""> 2280 </option>
-                    <option value=""> 2281 </option>
-                    <option value=""> 2282 </option>
-                    <option value=""> 2283 </option>
-                    <option value=""> 2284 </option>
-                    <option value=""> 2285 </option>
-                    <option value=""> 2286 </option>
-                    <option value=""> 2287 </option>
-                    <option value=""> 2288 </option>
-                    <option value=""> 2289 </option>
-                    <option value=""> 2290 </option>
-                    <option value=""> 2291 </option>
-                    <option value=""> 2292 </option>
-                    <option value=""> 2293 </option>
-                    <option value=""> 2294 </option>
-                    <option value=""> 2295 </option>
-                    <option value=""> 2296 </option>
-                    <option value=""> 2297 </option>
-                    <option value=""> 2298 </option>
-                    <option value=""> 2299 </option>
-                    <option value=""> 2300 </option>
-                    <option value=""> 2301 </option>
-                    <option value=""> 2302 </option>
-                    <option value=""> 2303 </option>
-                    <option value=""> 2304 </option>
-                    <option value=""> 2305 </option>
-                    <option value=""> 2306 </option>
-                    <option value=""> 2307 </option>
-                    <option value=""> 2308 </option>
-                    <option value=""> 2309 </option>
-                    <option value=""> 2310 </option>
-                    <option value=""> 2311 </option>
-                    <option value=""> 2312 </option>
-                    <option value=""> 2313 </option>
-                    <option value=""> 2314 </option>
-                    <option value=""> 2315 </option>
-                    <option value=""> 2316 </option>
-                    <option value=""> 2317 </option>
-                    <option value=""> 2318 </option>
-                    <option value=""> 2319 </option>
-                    <option value=""> 2320 </option>
-                    <option value=""> 2321 </option>
-                    <option value=""> 2322 </option>
-                    <option value=""> 2323 </option>
-                    <option value=""> 2324 </option>
-                    <option value=""> 2325 </option>
-                    <option value=""> 2326 </option>
-                    <option value=""> 2327 </option>
-                    <option value=""> 2328 </option>
-                    <option value=""> 2329 </option>
-                    <option value=""> 2330 </option>
-                    <option value=""> 2331 </option>
-                    <option value=""> 2332 </option>
-                    <option value=""> 2333 </option>
-                    <option value=""> 2334 </option>
-                    <option value=""> 2335 </option>
-                    <option value=""> 2336 </option>
-                    <option value=""> 2337 </option>
-                    <option value=""> 2338 </option>
-                    <option value=""> 2339 </option>
-                    <option value=""> 2340 </option>
-                    <option value=""> 2341 </option>
-                    <option value=""> 2342 </option>
-                    <option value=""> 2343 </option>
-                    <option value=""> 2344 </option>
-                    <option value=""> 2345 </option>
-                    <option value=""> 2346 </option>
-                    <option value=""> 2347 </option>
-                    <option value=""> 2348 </option>
-                    <option value=""> 2349 </option>
-                    <option value=""> 2350 </option>
-                    <option value=""> 2351 </option>
-                    <option value=""> 2352 </option>
-                    <option value=""> 2353 </option>
-                    <option value=""> 2354 </option>
-                    <option value=""> 2355 </option>
-                    <option value=""> 2356 </option>
-                    <option value=""> 2357 </option>
-                    <option value=""> 2358 </option>
-                    <option value=""> 2359 </option>
-                    <option value=""> 2360 </option>
-                    <option value=""> 2361 </option>
-                    <option value=""> 2362 </option>
-                    <option value=""> 2363 </option>
-                    <option value=""> 2364 </option>
-                    <option value=""> 2365 </option>
-                    <option value=""> 2366 </option>
-                    <option value=""> 2367 </option>
-                    <option value=""> 2368 </option>
-                    <option value=""> 2369 </option>
-                    <option value=""> 2370 </option>
-                    <option value=""> 2371 </option>
-                    <option value=""> 2372 </option>
-                    <option value=""> 2373 </option>
-                    <option value=""> 2374 </option>
-                    <option value=""> 2375 </option>
-                    <option value=""> 2376 </option>
-                    <option value=""> 2377 </option>
-                    <option value=""> 2378 </option>
-                    <option value=""> 2379 </option>
-                    <option value=""> 2380 </option>
-                    <option value=""> 2381 </option>
-                    <option value=""> 2382 </option>
-                    <option value=""> 2383 </option>
-                    <option value=""> 2384 </option>
-                    <option value=""> 2385 </option>
-                    <option value=""> 2386 </option>
-                    <option value=""> 2387 </option>
-                    <option value=""> 2388 </option>
-                    <option value=""> 2389 </option>
-                    <option value=""> 2390 </option>
-                    <option value=""> 2391 </option>
-                    <option value=""> 2392 </option>
-                    <option value=""> 2393 </option>
-                    <option value=""> 2394 </option>
-                    <option value=""> 2395 </option>
-                    <option value=""> 2396 </option>
-                    <option value=""> 2397 </option>
-                    <option value=""> 2398 </option>
-                    <option value=""> 2399 </option>
-                    <option value=""> 2400 </option>
-                    <option value=""> 2401 </option>
-                    <option value=""> 2402 </option>
-                    <option value=""> 2403 </option>
-                    <option value=""> 2404 </option>
-                    <option value=""> 2405 </option>
-                    <option value=""> 2406 </option>
-                    <option value=""> 2407 </option>
-                    <option value=""> 2408 </option>
-                    <option value=""> 2409 </option>
-                    <option value=""> 2410 </option>
-                    <option value=""> 2411 </option>
-                    <option value=""> 2412 </option>
-                    <option value=""> 2413 </option>
-                    <option value=""> 2414 </option>
-                    <option value=""> 2415 </option>
-                    <option value=""> 2416 </option>
-                    <option value=""> 2417 </option>
-                    <option value=""> 2418 </option>
-                    <option value=""> 2419 </option>
-                    <option value=""> 2420 </option>
-                    <option value=""> 2421 </option>
-                    <option value=""> 2422 </option>
-                    <option value=""> 2423 </option>
-                    <option value=""> 2424 </option>
-                    <option value=""> 2425 </option>
-                    <option value=""> 2426 </option>
-                    <option value=""> 2427 </option>
-                    <option value=""> 2428 </option>
-                    <option value=""> 2429 </option>
-                    <option value=""> 2430 </option>
-                    <option value=""> 2431 </option>
-                    <option value=""> 2432 </option>
-                    <option value=""> 2433 </option>
-                    <option value=""> 2434 </option>
-                    <option value=""> 2435 </option>
-                    <option value=""> 2436 </option>
-                    <option value=""> 2437 </option>
-                    <option value=""> 2438 </option>
-                    <option value=""> 2439 </option>
-                    <option value=""> 2440 </option>
-                    <option value=""> 2441 </option>
-                    <option value=""> 2442 </option>
-                    <option value=""> 2443 </option>
-                    <option value=""> 2444 </option>
-                    <option value=""> 2445 </option>
-                    <option value=""> 2446 </option>
-                    <option value=""> 2447 </option>
-                    <option value=""> 2448 </option>
-                    <option value=""> 2449 </option>
-                    <option value=""> 2450 </option>
-                    <option value=""> 2451 </option>
-                    <option value=""> 2452 </option>
-                    <option value=""> 2453 </option>
-                    <option value=""> 2454 </option>
-                    <option value=""> 2455 </option>
-                    <option value=""> 2456 </option>
-                    <option value=""> 2457 </option>
-                    <option value=""> 2458 </option>
-                    <option value=""> 2459 </option>
-                    <option value=""> 2460 </option>
-                    <option value=""> 2461 </option>
-                    <option value=""> 2462 </option>
-                    <option value=""> 2463 </option>
-                    <option value=""> 2464 </option>
-                    <option value=""> 2465 </option>
-                    <option value=""> 2466 </option>
-                    <option value=""> 2467 </option>
-                    <option value=""> 2468 </option>
-                    <option value=""> 2469 </option>
-                    <option value=""> 2470 </option>
-                    <option value=""> 2471 </option>
-                    <option value=""> 2472 </option>
-                    <option value=""> 2473 </option>
-                    <option value=""> 2474 </option>
-                    <option value=""> 2475 </option>
-                    <option value=""> 2476 </option>
-                    <option value=""> 2477 </option>
-                    <option value=""> 2478 </option>
-                    <option value=""> 2479 </option>
-                    <option value=""> 2480 </option>
-                    <option value=""> 2481 </option>
-                    <option value=""> 2482 </option>
-                    <option value=""> 2483 </option>
-                    <option value=""> 2484 </option>
-                    <option value=""> 2485 </option>
-                    <option value=""> 2486 </option>
-                    <option value=""> 2487 </option>
-                    <option value=""> 2488 </option>
-                    <option value=""> 2489 </option>
-                    <option value=""> 2490 </option>
-                    <option value=""> 2491 </option>
-                    <option value=""> 2492 </option>
-                    <option value=""> 2493 </option>
-                    <option value=""> 2494 </option>
-                    <option value=""> 2495 </option>
-                    <option value=""> 2496 </option>
-                    <option value=""> 2497 </option>
-                    <option value=""> 2498 </option>
-                    <option value=""> 2499 </option>
-                </select>
-            </div>
-        </div>
-        </div>
-        <hr>
-
-        <!--Voorwaarde aanvaarding en Nieuwsbrief-->
-        <div class="row row-heigth">
-        <div class="form-group col-6">
-            <label><h4>Hou me op de hoogte</h4></label>
-            <div>
-                <div class="custom-control custom-checkbox">
-                    <input name="checkbox" id="checkbox_0" type="checkbox" class="custom-control-input"
-                        value="ingeschreven">
-                    <label for="checkbox_0" class="custom-control-label">Inschrijven voor onze nieuwsbrief</label>
-                </div>
-                <div class="custom-control custom-checkbox">
-                    <input name="checkbox" id="checkbox_1" type="checkbox" class="custom-control-input" value="akkoord">
-                    <label for="checkbox_1" class="custom-control-label">Ik ga akkoord met de algemene voorwaarde.</label>
-                </div>
-            </div>
-        </div>
+            </div>       
         
 
-        <!--Betalingsopties-->
-        <div class="form-group">
-        <div class="form-group col-12">
-            <label><h4>Betaling</h4></label>
-            <div>
-                <div class="custom-control custom-radio">
-                    <input name="radio" id="radio_0" type="radio" class="custom-control-input" value="bankapp">
-                    <label for="radio_0" class="custom-control-label">Banking app</label>
-                </div>
-
-                <div class="custom-control custom-radio">
-                    <input name="radio" id="radio_1" type="radio" class="custom-control-input" value="overschrijving">
-                    <label for="radio_1" class="custom-control-label">Overschrijving</label>
-                </div>
-
-                <div class="custom-control custom-radio">
-                    <input name="radio" id="radio_2" type="radio" class="custom-control-input" value="visa">
-                    <label for="radio_2" class="custom-control-label">Visa</label>
-                </div>
-
-                <div class="custom-control custom-radio">
-                    <input name="radio" id="radio_3" type="radio" class="custom-control-input" value="Paypal">
-                    <label for="radio_3" class="custom-control-label">PayPal</label>
+        <!--Gebruikersnaam Verplicht-->
+            <div class="row">
+            <div class="form-group col-6">
+                <label for="gebruiker">Gebruikersnaam</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">
+                            <i class="fa fa-at"></i>
+                        </div>
+                    </div>
+                    <input id="gebruiker" name="gebruiker" placeholder="r09student" type="text" class="form-control"
+                        required="required">
                 </div>
             </div>
-        </div>       
-        </div>
-        <hr>
 
-        <!---->
-        <div class="form-group col-12">
-            <button name="submit" type="submit" class="btn btn-primary">Wave your magic wand</button>
-        </div>
-    </form>
+        <!--Email adres-->
+            <div class="form-group col-6">
+                <label for="e-mail">E-mailadres</label>
+                <input id="e-mail" name="e-mail" placeholder="mail@example.be" type="text" class="form-control">
+            </div>
+            </div>
+
+        <!--Wachtwoord en wachtwoord herhaling-->
+            <div class="row">
+            <div class="form-group col-6">
+                <label for="wachtwoord">Wachtwoord</label>
+                <input id="wachtwoord" name="wachtwoord" type="text" class="form-control" 
+                    aria-describedby="wachtwoordHelpBlock">
+                <span id="wachtwoordHelpBlock" class="form-text text-muted">Je wachtwoord moet minstens 8 tekens lang
+                    zijn</span>
+            </div>
+
+            <div class="form-group col-6">
+                <label for="herhaalWachtwoord">herhaal wachtwoord</label>
+                <input id="herhaalWachtwoord" name="herhaalWachtwoord" type="text" class="form-control">
+            </div>
+            </div>
+
+        <!--Adres gegevens Verplicht-->
+            <div class="row">
+            <div class="form-group col-12">
+                <label for="adres">Adres</label>
+                <input id="adres" name="adres" placeholder="Uw adres en huisnummer" type="text" class="form-control"
+                    required="required">
+            </div>
+            </div>
+
+        <!--Land Verplicht-->
+            <div class = "row">
+            <div class="form-group col-5">
+                <label for="land">Land</label>
+                <div>
+                    <select id="land" name="land" class="custom-select" required="required">
+                        <option value="">kies een land</option>
+                        <option value="Albanië">Albanië</option>
+                        <option value="Andorra">Andorra</option>
+                        <option value="Armenië">Armenië</option>
+                        <option value="Azerbeidzjan">Azerbeidzjan</option>
+                        <option value="Belgie">Belgie</option>
+                        <option value="Bosnië">Bosnië</option>
+                        <option value="Bulgarije">Bulgarije</option>
+                        <option value="Cyprus">Cyprus</option>
+                        <option value="Denemarken">Denemarken</option>
+                        <option value="Duitsland">Duitsland</option>
+                        <option value="Estland">Estland</option>
+                        <option value="Finland">Finland</option>                  
+                        <option value="Frankrijk">Frankrijk</option>
+                        <option value="Georgië">Georgië</option>
+                        <option value="Griekenland">Griekenland</option>
+                        <option value="Hongarije">Hongarije</option>
+                        <option value="Ierland">Ierland</option>
+                        <option value="Ijsland">Ijsland</option>
+                        <option value="Italië">Italië</option>
+                        <option value="Kazachstan">Kazachstan</option>
+                        <option value="Kosovo">Kosovo</option>
+                        <option value="Kroatië">Kroatië</option>
+                        <option value="Letland">Letland</option>
+                        <option value="Liechtenstein">Liechtenstein</option>
+                        <option value="Litouwen">Litouwen</option>
+                        <option value="Luxemburg">Luxemburg</option>
+                        <option value="Malta">Malta</option>
+                        <option value="Moldavië">Moldavië</option>
+                        <option value="Monaco">Monaco</option>
+                        <option value="Montenegro">Montenegro</option>
+                        <option value="Nederland">Nederland</option>
+                        <option value="Noord-Macedonië">Noord-Macedonië</option>
+                        <option value="Noorwegen">Noorwegen</option>
+                        <option value="Oekraïne">Oekraïne</option>
+                        <option value="Oostenrijk">Oostenrijk</option>
+                        <option value="Polen">Polen</option>
+                        <option value="Portugal">Portugal</option>
+                        <option value="Roemenië">Roemenië</option>
+                        <option value="Rusland">Rusland</option>
+                        <option value="San Marino">San Marino</option>
+                        <option value="Servië">Servië</option>
+                        <option value="Slovenië">Slovenië</option>
+                        <option value="Slowakije">Slowakije</option>
+                        <option value="Spanje">Spanje</option>
+                        <option value="Tsjechië">Tsjechië</option>
+                        <option value="Turkije">Turkije</option>
+                        <option value="Vaticaanstad">Vaticaanstad</option>
+                        <option value="Verenigd Koninkrijk">Verenigd Koninkrijk</option>
+                        <option value="Wit-Rusland">Wit-Rusland</option>
+                        <option value="Zweden">Zweden</option>
+                        <option value="Zwitserland">Zwitserland</option>
+                    </select>
+                </div>
+            </div>
+
+            <!--Provincie Verplicht-->
+            <div class="form-group col-5">
+                <label for="provincie">Provincie</label>
+                <div>
+                    <select id="provincie" name="provincie" class="custom-select" required="required">
+                        <option value="">Kies een provincie</option>
+                        <option value="Antwerpen">Antwerpen</option>
+                        <option value="Brussel">Brussel</option>
+                        <option value="Henegouwen">Henegouwen</option>
+                        <option value="Limburg">Limburg</option>
+                        <option value="Luik">Luik</option>
+                        <option value="Luxemburg">Luxemburg</option>
+                        <option value="Namen">Namen</option>
+                        <option value="Oost-Vlaanderen">Oost-Vlaanderen</option>
+                        <option value="Vlaams-Brabant">Vlaams-Brabant</option>
+                        <option value="Waals-Brabant">Waals-Brabant</option>
+                        <option value="West-Vlaanderen">West-Vlaanderen</option>
+                    </select>
+                </div>
+            </div>
+
+            <!--Postcode-->
+            <div class="form-group col-2">
+                <label for="select">Postcode</label>
+                <div>
+                    <select id="select" name="select" class="custom-select">
+                        <option value=""></option>
+                        
+                    </select>
+                </div>
+            </div>
+            </div>
+            <hr>
+
+            <!--Voorwaarde aanvaarding en Nieuwsbrief-->
+            <div class="row row-heigth">
+            <div class="form-group col-6">
+                <label><h4>Hou me op de hoogte</h4></label>
+                <div>
+                    <div class="custom-control custom-checkbox">
+                        <input name="checkbox" id="checkbox_0" type="checkbox" class="custom-control-input"
+                            value="ingeschreven">
+                        <label for="checkbox_0" class="custom-control-label">Inschrijven voor onze nieuwsbrief</label>
+                    </div>
+                    <div class="custom-control custom-checkbox">
+                        <input name="checkbox" id="checkbox_1" type="checkbox" class="custom-control-input" value="akkoord">
+                        <label for="checkbox_1" class="custom-control-label">Ik ga akkoord met de algemene voorwaarde.</label>
+                    </div>
+                </div>
+            </div>
+            
+
+            <!--Betalingsopties-->
+            <div class="form-group">
+            <div class="form-group col-12">
+                <label><h4>Betaling</h4></label>
+                <div>
+                    <div class="custom-control custom-radio">
+                        <input name="radio" id="radio_0" type="radio" class="custom-control-input" value="bankapp">
+                        <label for="radio_0" class="custom-control-label">Banking app</label>
+                    </div>
+
+                    <div class="custom-control custom-radio">
+                        <input name="radio" id="radio_1" type="radio" class="custom-control-input" value="overschrijving">
+                        <label for="radio_1" class="custom-control-label">Overschrijving</label>
+                    </div>
+
+                    <div class="custom-control custom-radio">
+                        <input name="radio" id="radio_2" type="radio" class="custom-control-input" value="visa">
+                        <label for="radio_2" class="custom-control-label">Visa</label>
+                    </div>
+
+                    <div class="custom-control custom-radio">
+                        <input name="radio" id="radio_3" type="radio" class="custom-control-input" value="Paypal">
+                        <label for="radio_3" class="custom-control-label">PayPal</label>
+                    </div>
+                </div>
+            </div>       
+            </div>
+            <hr>
+
+            <!---->
+            <div class="form-group col-12">
+                <button name="submit" type="submit" class="btn btn-primary" onclick="validateForm('weergave')">Wave your magic wand</button>
+            </div>
+        </form>
+        </div>       
+    </div>
+    <div class="column right">
+        <div id="controle"></div>
+    </div>
 </body>
 </html>

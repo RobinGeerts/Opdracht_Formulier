@@ -5,7 +5,15 @@ body{
 hr{
     width: 100%;
 }
-
+.column{
+    float:left;
+}
+.left{
+    width:70%;
+}
+.right{
+    width: 30%;
+}
 .btn{
     width: 100%;
 }
