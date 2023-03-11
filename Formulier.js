@@ -9,11 +9,9 @@
 // LAND
 // PROVINCIE
 //Indien het veld leeg is geef je bijvoorbeeld volgende melding “Het veld voornaam is vereist.”.
-
-
-
 function validateForm(){
-document.getElementById('controle').innerHTML = "test";
+
+document.getElementById('controle').innerHTML = "<div class=\"alert alert-danger\" role=\"alert\">This is a danger alert—check it out!";
 }
 
 //Voor de controle van een leeg veld gebruik je een functie checkEmptyField waar je steeds 2 parameters 
@@ -50,7 +48,16 @@ else
 //o Mag letters, nummers of underscores bevatten
 //o Mag punten of koppeltekens bevatten, maar niet als eerste karakter
 function checkPasword(){
-
+    let wachtwoord = getElementById('wachtwoord');
+    let herhaalWachtwoord = getElementById('herhaalWachtwoord');
+    if (wachtwoord === herhaalWachtwoord)
+    {
+        return true;
+    }
+    else
+    {
+        return 
+    }
 }
 
 //Voor de controle of er een betalingswijze is aangeduid, gebruik je de functie validatePayment waar je één 
