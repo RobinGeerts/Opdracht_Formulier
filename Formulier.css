@@ -17,3 +17,9 @@ hr{
 .btn{
     width: 100%;
 }
+#controle{
+    padding-top: 100px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin:0;
+}
