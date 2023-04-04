@@ -7,19 +7,19 @@ let antwoord ="";
 function validateForm(){
     let errors =[];
     //check op lege inputfields
-    errors.add(checkEmptyField("voornaam", "<p>Het veld voornaam is vereist.</p>"));
-    errors.add(checkEmptyField("naam", "<p>Het veld naam is vereist.</p>"));
-    errors.add(checkEmptyField("gebruiker", "<p>Het veld gebruikersnaam is vereist.</p>"));
-    errors.add(checkEmptyField("e-mail", "<p>Het veld e-mail is vereist.</p>"));
+    errors.push(checkEmptyField("voornaam", "<p>Het veld voornaam is vereist.</p>"));
+    errors.push(checkEmptyField("naam", "<p>Het veld naam is vereist.</p>"));
+    errors.push(checkEmptyField("gebruiker", "<p>Het veld gebruikersnaam is vereist.</p>"));
+    errors.push(checkEmptyField("e-mail", "<p>Het veld e-mail is vereist.</p>"));
 
-    errors.add(checkEmptyField("wachtwoord","<p>Het veld wachtwoord is vereist.</p>"));
-    errors.add(checkEmptyField("herhaalWachtwoord", "<p>Het veld herhaalwachtwoord is vereist.</p>"));
+    errors.push(checkEmptyField("wachtwoord","<p>Het veld wachtwoord is vereist.</p>"));
+    errors.push(checkEmptyField("herhaalWachtwoord", "<p>Het veld herhaalwachtwoord is vereist.</p>"));
 
-    errors.add(checkEmptyField("adres", "<p>Het veld adres is vereist.</p>"));
-    errors.add(checkEmptyField("land", "<p>Het veld land is vereist.</p>"));
-    errors.add(checkEmptyField("provincie", "<p>Het veld provincie is vereist.</p>"));
-    errors.add(checkEmptyField("postcode", "<p>Het veld postcode is vereist.</p>"));
-    errors.add(checkCheckBox());
+    errors.push(checkEmptyField("adres", "<p>Het veld adres is vereist.</p>"));
+    errors.push(checkEmptyField("land", "<p>Het veld land is vereist.</p>"));
+    errors.push(checkEmptyField("provincie", "<p>Het veld provincie is vereist.</p>"));
+    errors.push(checkEmptyField("postcode", "<p>Het veld postcode is vereist.</p>"));
+    errors.push(checkCheckBox());
     //document.getElementById('controle').innerHTML = "<div class=\"alert alert-danger\" role=\"alert\">" + errors.join("");//join zorgt voor de manier van aaneensluiting, standaard is het een komma
     document.getElementById('controle').innerHTML = "<div class=\"alert alert-danger\" role=\"alert\"><H2>Yikes, errors..</h2><p>"+ antwoord + "</p></div>";
 }
