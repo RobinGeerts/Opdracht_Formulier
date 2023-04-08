@@ -41,7 +41,6 @@
             </div>
             </div>       
         
-
         <!--Gebruikersnaam Verplicht-->
             <div class="row">
             <div class="form-group col-6">
@@ -69,14 +68,14 @@
             <div class="form-group col-6">
                 <label for="wachtwoord">Wachtwoord</label>
                 <input id="wachtwoord" name="wachtwoord" type="password" class="form-control" 
-                    aria-describedby="wachtwoordHelpBlock">
+                    aria-describedby="wachtwoordHelpBlock" required="required">
                 <span id="wachtwoordHelpBlock" class="form-text text-muted">Je wachtwoord moet minstens 8 tekens lang
                     zijn</span>
             </div>
 
             <div class="form-group col-6">
                 <label for="herhaalWachtwoord">herhaal wachtwoord</label>
-                <input id="herhaalWachtwoord" name="herhaalWachtwoord" type="password" class="form-control">
+                <input id="herhaalWachtwoord" name="herhaalWachtwoord" type="password" class="form-control" required="required">
             </div>
             </div>
 
@@ -238,7 +237,15 @@
         </div>       
     </div>
     <div class="column right">
-        <div id="controle"></div>
+        <div id="controle">
+
+        </div>
+        <div id="controle2">
+
+        </div>
+        <div id="betaling">
+
+        </div>
     </div>   
 </body>
 </html>

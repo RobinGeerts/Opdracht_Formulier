@@ -17,9 +17,10 @@ hr{
 .btn{
     width: 100%;
 }
-#controle{
+#controle,#controle2,#betaling{
     padding-top: 100px;
     padding-left: 20px;
     padding-right: 20px;
     margin:0;
+    width: auto;
 }

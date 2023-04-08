@@ -1,65 +1,139 @@
 //Declaratie
-let errors = ["<h4>Yikes, errors..</h4>"];
 let antwoord ="";
+let errors = [];
+let paswoord1  = false;
+let paswoord2 = false;
+let gebruikersnaam="";
+let email="";
+let betaling = [];
+let postcode;
 //FUNCTIE 1
 
 //Indien het veld leeg is geef je bijvoorbeeld volgende melding “Het veld voornaam is vereist.”.
 function validateForm(){
-    let errors =[];
+    let errors = [];
+    document.getElementById('controle').innerHTML = "<div></div>";
+    document.getElementById('controle2').innerHTML = "<div></div>";
+    document.getElementById('betaling').innerHTML = "<div></div>";
     //check op lege inputfields
-    errors.push(checkEmptyField("voornaam", "<p>Het veld voornaam is vereist.</p>"));
-    errors.push(checkEmptyField("naam", "<p>Het veld naam is vereist.</p>"));
-    errors.push(checkEmptyField("gebruiker", "<p>Het veld gebruikersnaam is vereist.</p>"));
-    errors.push(checkEmptyField("e-mail", "<p>Het veld e-mail is vereist.</p>"));
+    //check voornaam
+    checkEmptyField("voornaam")? errors.push("<p>Het veld voornaam is vereist.</p>"): null;
 
-    errors.push(checkEmptyField("wachtwoord","<p>Het veld wachtwoord is vereist.</p>"));
-    errors.push(checkEmptyField("herhaalWachtwoord", "<p>Het veld herhaalwachtwoord is vereist.</p>"));
+    //check naam
+    checkEmptyField("naam")? errors.push("<p>Het veld naam is vereist.</p>"): null;
 
-    errors.push(checkEmptyField("adres", "<p>Het veld adres is vereist.</p>"));
-    errors.push(checkEmptyField("land", "<p>Het veld land is vereist.</p>"));
-    errors.push(checkEmptyField("provincie", "<p>Het veld provincie is vereist.</p>"));
-    errors.push(checkEmptyField("postcode", "<p>Het veld postcode is vereist.</p>"));
-    errors.push(checkCheckBox());
-    //document.getElementById('controle').innerHTML = "<div class=\"alert alert-danger\" role=\"alert\">" + errors.join("");//join zorgt voor de manier van aaneensluiting, standaard is het een komma
-    document.getElementById('controle').innerHTML = "<div class=\"alert alert-danger\" role=\"alert\"><H2>Yikes, errors..</h2><p>"+ antwoord + "</p></div>";
+    //check gebruikersnaam
+    checkEmptyField("gebruikersnaam")? errors.push("<p>Het veld gebruikersnaam is vereist.</p>"): gebruikersnaam = document.getElementById("gebruikersnaam").value;
+    if (gebruikersnaam != "")
+    {
+      testGebruikersnaam(gebruikersnaam)? null: errors.push("<p>Deze gebruikersnaam is ongeldig</p>");
+    }
+
+    //check email
+    checkEmptyField("e-mail")? errors.push("<p>Het veld e-mail is vereist.</p>"): email = document.getElementById("e-mail").value;
+    if (email != "")
+    {
+      validateEmail(email)? null: errors.push("E-mailaders is niet correct.");
+    }
+
+    //check wachtwoord en herhaling 
+    checkEmptyField("wachtwoord")? errors.push("<p>Het veld wachtwoord is vereist.</p>"): paswoord1 = document.getElementById("wachtwoord").value;
+    checkEmptyField("herhaalWachtwoord")? errors.push("<p>Het veld herhaalwachtwoord is vereist.</p>"): paswoord2 = document.getElementById("herhaalWachtwoord").value;
+    if (paswoord1 != "" || paswoord2 != "")
+    {
+      checkPasswordsMatch(paswoord1, paswoord2);
+    }
+
+    //check adres
+    checkEmptyField("adres")? errors.push("<p>Het veld adres is vereist.</p>"): null;
+
+    //check land
+    checkEmptyField("land")? errors.push("<p>Het veld land is vereist.</p>"): null;
+
+    //check provincie
+    checkEmptyField("provincie")? errors.push("<p>Het veld provincie is vereist.</p>"): null;
+    
+    //check postcode
+    checkEmptyField("postcode")? errors.push("<p>Het veld postcode is vereist.</p>"): postcode = parseInt(document.getElementById("postcode").value);
+    if(postcode != null)
+    {
+    checkPC(postcode)? null: errors.push("<p>De waarde van postcode moet tussen 1000 en 9999 liggen.</p>");
+    }
+
+    //algemene voorwaarde
+    checkCheckBox()? errors.push("Je moet de algemene voorwaarden accepteren."): null;
+
+    //validatie betalingskeuze
+    validatePayment("radio") ? antwoord : errors.push('<p>Selecteer een betalingwijze</p>');
+   
+    //Terug gave van de functie controle
+    if (errors.length > 0)
+    {
+      document.getElementById('controle').innerHTML = "<div class=\"alert alert-danger\" role=\"alert\"><H4>Yikes, errors..</h4><p>" + errors.join("") + "</p></div>";
+    }
+    else if (errors.length == 0)
+    {     
+      document.getElementById('controle2').innerHTML = "<div class=\"alert alert-success\" role=\"alert\"><H4>Goed gedaan!</H4><p>Aww yeah je werd geregistreerd</p></div>";
+      document.getElementById('betaling').innerHTML = "<div class=\"alert alert-primary\" role=\"alert\"><H4>Betalingswijze</H4><p>Je betalingswijze is " + antwoord + "</p></div>";
+    }   
 }
 
-//Functie 2 CheckEmptyField
-function checkEmptyField(veld, melding) {
-  var textField = document.getElementById(veld);
-  if (textField.value.length == 0) {
-    return melding;
-  }
-  return true;
+//Functie 2 CheckEmptyField Deze functie werkt :D
+function checkEmptyField(veld) {
+  let textField = document.getElementById(veld).value;
+  if (textField == "")
+    return true;
 }
 
-//Functie 3 Check de checkbox aangeduid of niet ?
+//Functie 3 Check de checkbox aangeduid of niet ? Deze functie werkt :D
 function checkCheckBox() {
-  var checkBox = document.getElementById("checkbox_1");
+  let checkBox = document.getElementById("checkbox_1");
   if (checkBox.checked == false)
-    {
-        return "Je moet de algemene voorwaarden accepteren.";
-    }
-  else
-    {
-        return "";
-    }
+    return true;
+  else 
+    return false;
 }
 
-//vergelijk de 2 ingegeven wachtwoorden
-function checkPasswordsMatch() {
-  var password1 = document.getElementById("wachtwoord").value;
-  var password2 = document.getElementById("herhaalWachtwoord").value;
+//Functie 4 check ingegeven wachtwoorden  Deze functie werkt :D
+function checkPasswordsMatch(paswoord1, paswoord2) {
 
-  if (password1.length < 8 || password2.length < 8) {
-    alert("Het wachtwoord moet minimaal 8 karakters hebben.");
-    return false;
+  if (paswoord1.length < 8 || paswoord2.length < 8) {
+    return errors.push("Het wachtwoord moet minimaal 8 karakters hebben.");
   }
-
-  if (password1 !== password2) {
-    alert("Deze wachtwoorden komen niet overeen.");
-    return false;
+  else if (paswoord1 !== paswoord2) {
+    return errors.push("Deze wachtwoorden komen niet overeen.");
   }
+}
 
-  return true;
+//Functie 5 check email Deze functie werkt :D
+function validateEmail(email) {
+let regex = /^[a-zA-Z0-9]+[a-zA-Z0-9_.-]*@[a-zA-Z0-9_.-]+.[a-z]{2,3}$/;
+
+return regex.test(email);
+}
+function testGebruikersnaam(gebruikersnaam)
+{
+  let gebruikersnaamregex = /^[a-zA-Z0-9]+[a-zA-Z0-9]$/;
+  return gebruikersnaamregex.test(gebruikersnaam);
+}
+
+//Functie 6 check betalingsvalidatie Deze functie werkt :D
+function validatePayment(veld) {
+  betaling = document.getElementsByName(veld);
+for (let i = 0; i < betaling.length; i++) {
+if (betaling[i].checked) {
+antwoord = betaling[i].value;
+return antwoord;
+}
+}
+return false;
+}
+
+//Functie 7 check waarde postcode
+function checkPC(veld)
+{
+  if (veld >= 1000 && veld < 10000)
+  return true
+  else
+    return false;
 }
