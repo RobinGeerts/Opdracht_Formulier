@@ -193,7 +193,7 @@
                         <label for="checkbox_0" class="custom-control-label">Inschrijven voor onze nieuwsbrief</label>
                     </div>
                     <div class="custom-control custom-checkbox">
-                        <input name="checkbox" id="checkbox_1" type="checkbox" class="custom-control-input" value="akkoord">
+                        <input name="checkbox" id="checkbox_1" type="checkbox" class="custom-control-input" value="akkoord" required="required">
                         <label for="checkbox_1" class="custom-control-label">Ik ga akkoord met de algemene voorwaarde.</label>
                     </div>
                 </div>
@@ -206,22 +206,22 @@
                 <label><h4>Betaling</h4></label>
                 <div>
                     <div class="custom-control custom-radio">
-                        <input name="radio" id="radio_0" type="radio" class="custom-control-input" value="bankapp">
+                        <input name="radio" id="radio_0" type="radio" class="custom-control-input" value="bankapp" required="required">
                         <label for="radio_0" class="custom-control-label">Banking app</label>
                     </div>
 
                     <div class="custom-control custom-radio">
-                        <input name="radio" id="radio_1" type="radio" class="custom-control-input" value="overschrijving">
+                        <input name="radio" id="radio_1" type="radio" class="custom-control-input" value="overschrijving" required="required">
                         <label for="radio_1" class="custom-control-label">Overschrijving</label>
                     </div>
 
                     <div class="custom-control custom-radio">
-                        <input name="radio" id="radio_2" type="radio" class="custom-control-input" value="visa">
+                        <input name="radio" id="radio_2" type="radio" class="custom-control-input" value="visa" required="required">
                         <label for="radio_2" class="custom-control-label">Visa</label>
                     </div>
 
                     <div class="custom-control custom-radio">
-                        <input name="radio" id="radio_3" type="radio" class="custom-control-input" value="Paypal">
+                        <input name="radio" id="radio_3" type="radio" class="custom-control-input" value="Paypal" required="required">
                         <label for="radio_3" class="custom-control-label">PayPal</label>
                     </div>
                 </div>
@@ -231,7 +231,7 @@
 
             <!---->
             <div class="form-group col-12">
-                <button name="submit" type="submit" class="btn btn-primary" onclick="validateForm()">Wave your magic wand</button>
+                <button name="button" type="button" class="btn btn-primary" onclick="validateForm()">Wave your magic wand</button>
             </div>
         </form>
         </div>       

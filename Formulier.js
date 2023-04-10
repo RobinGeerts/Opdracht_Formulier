@@ -15,7 +15,9 @@ function validateForm(){
     document.getElementById('controle').innerHTML = "<div></div>";
     document.getElementById('controle2').innerHTML = "<div></div>";
     document.getElementById('betaling').innerHTML = "<div></div>";
+
     //check op lege inputfields
+
     //check voornaam
     checkEmptyField("voornaam")? errors.push("<p>Het veld voornaam is vereist.</p>"): null;
 
@@ -33,16 +35,21 @@ function validateForm(){
     checkEmptyField("e-mail")? errors.push("<p>Het veld e-mail is vereist.</p>"): email = document.getElementById("e-mail").value;
     if (email != "")
     {
-      validateEmail(email)? null: errors.push("E-mailaders is niet correct.");
+      validateEmail(email)? null: errors.push("<p>E-mailaders is niet correct.</p>");
     }
 
     //check wachtwoord en herhaling 
     checkEmptyField("wachtwoord")? errors.push("<p>Het veld wachtwoord is vereist.</p>"): paswoord1 = document.getElementById("wachtwoord").value;
     checkEmptyField("herhaalWachtwoord")? errors.push("<p>Het veld herhaalwachtwoord is vereist.</p>"): paswoord2 = document.getElementById("herhaalWachtwoord").value;
-    if (paswoord1 != "" || paswoord2 != "")
+    if (checkPasswordsMatch(paswoord1, paswoord2)==1)
     {
-      checkPasswordsMatch(paswoord1, paswoord2);
+      errors.push("<p>Het wachtwoord moet minimaal 8 karakters hebben.</p>");
     }
+    if (checkPasswordsMatch(paswoord1, paswoord2)==2)
+    {
+      errors.push("<p>Deze wachtwoorden komen niet overeen.</p>");
+    }
+    console.log(errors);  
 
     //check adres
     checkEmptyField("adres")? errors.push("<p>Het veld adres is vereist.</p>"): null;
@@ -67,15 +74,15 @@ function validateForm(){
     validatePayment("radio") ? antwoord : errors.push('<p>Selecteer een betalingwijze</p>');
    
     //Terug gave van de functie controle
-    if (errors.length > 0)
-    {
-      document.getElementById('controle').innerHTML = "<div class=\"alert alert-danger\" role=\"alert\"><H4>Yikes, errors..</h4><p>" + errors.join("") + "</p></div>";
-    }
-    else if (errors.length == 0)
-    {     
-      document.getElementById('controle2').innerHTML = "<div class=\"alert alert-success\" role=\"alert\"><H4>Goed gedaan!</H4><p>Aww yeah je werd geregistreerd</p></div>";
-      document.getElementById('betaling').innerHTML = "<div class=\"alert alert-primary\" role=\"alert\"><H4>Betalingswijze</H4><p>Je betalingswijze is " + antwoord + "</p></div>";
-    }   
+    if (errors.length === 0)
+      {
+        document.getElementById('controle2').innerHTML = "<div class=\"alert alert-success\" role=\"alert\"><H4>Goed gedaan!</H4><p>Aww yeah je werd geregistreerd</p></div>";
+        document.getElementById('betaling').innerHTML = "<div class=\"alert alert-primary\" role=\"alert\"><H4>Betalingswijze</H4><p>Je betalingswijze is " + antwoord + "</p></div>";
+      }
+    else 
+      {
+        document.getElementById('controle').innerHTML = "<div class=\"alert alert-danger\" role=\"alert\"><H4>Yikes, errors..</h4><p>" + errors.join("") + "</p></div>";
+      }
 }
 
 //Functie 2 CheckEmptyField Deze functie werkt :D
@@ -94,14 +101,17 @@ function checkCheckBox() {
     return false;
 }
 
-//Functie 4 check ingegeven wachtwoorden  Deze functie werkt :D
+//Functie 4 check ingegeven wachtwoorden  Deze functie werkt Niet
 function checkPasswordsMatch(paswoord1, paswoord2) {
-
   if (paswoord1.length < 8 || paswoord2.length < 8) {
-    return errors.push("Het wachtwoord moet minimaal 8 karakters hebben.");
+    return 1//errors.push("Het wachtwoord moet minimaal 8 karakters hebben.");
   }
   else if (paswoord1 !== paswoord2) {
-    return errors.push("Deze wachtwoorden komen niet overeen.");
+    return 2//errors.push("Deze wachtwoorden komen niet overeen.");
+  }
+  else 
+  {
+    return 3//false;
   }
 }
 
@@ -126,7 +136,6 @@ antwoord = betaling[i].value;
 return antwoord;
 }
 }
-return false;
 }
 
 //Functie 7 check waarde postcode
